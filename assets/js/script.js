@@ -45,3 +45,20 @@ function getRandomNumber() {
 // Event listeners for the two buttons to get random movie or random pokemon
 randomBtn.addEventListener("click", getRandomMovie);
 randomBtnPokemon.addEventListener("click", getRandomPokemon)
+
+let searchBtn = document.querySelector("#search-btn"); 
+
+searchBtn.addEventListener("click", search)
+
+
+function search() {
+    let movieSearch = document.querySelector("#title-search").value;    
+    fetch('http://www.omdbapi.com/?apikey=3649a4e3&t=' + movieSearch)
+        .then(function (response) {
+          return response.json();
+        })
+        .then(function (data) {
+            console.log(data); 
+        })
+        .catch(err => console.error(err));
+}
