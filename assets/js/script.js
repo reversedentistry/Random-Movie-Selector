@@ -4,7 +4,7 @@ var randomMovieDiv = document.querySelector("#random-movie");
 var randomBtn = document.querySelector("#random-btn");
 var randomBtnPokemon = document.querySelector("#random-btn-pokemon");
 var poster = document.querySelector("#random-movie-poster")
-getRandomNumber();
+var pokemonName = document.querySelector("#pokemonName");
 
 
 
@@ -36,6 +36,10 @@ function getRandomPokemon(){
     })
   }
 
+// function to see if they guessed the pokemon correctly
+function guessCheck(){
+  console.log()
+}
 
 // funtion to grab a random number
 function getRandomNumber() {
