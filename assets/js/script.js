@@ -5,9 +5,7 @@ var randomBtn = document.querySelector("#random-btn");
 var randomBtnPokemon = document.querySelector("#random-btn-pokemon");
 var poster = document.querySelector("#random-movie-poster")
 getRandomNumber();
-var randomString = randomNumber.toString();
-var pokeurl = "https://pokeapi.co/api/v2/pokemon/" + randomString;
-var pokemonSprite = document.querySelector("#pokemon-sprite")
+
 
 
 // two functions to fetch from the movie and pokemon apis respectively
@@ -24,6 +22,10 @@ function getRandomMovie(){
 };
 
 function getRandomPokemon(){
+  getRandomNumber();
+  var randomString = randomNumber.toString();
+  var pokeurl = "https://pokeapi.co/api/v2/pokemon/" + randomString;
+  var pokemonSprite = document.querySelector("#pokemon-sprite")
   fetch(pokeurl)
     .then(function(response){
       return response.json();
@@ -33,16 +35,6 @@ function getRandomPokemon(){
       pokemonSprite.setAttribute("src", data.sprites.front_default)
     })
   }
-
-
-
-
-
-
-
-
-
-
 
 
 // funtion to grab a random number
