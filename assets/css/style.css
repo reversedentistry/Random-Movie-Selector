@@ -14,7 +14,7 @@ body{
     margin-bottom: 20px;
 } */
 
-#generator {
+.generator {
     height: 15vh;
     width: 70vw;
 }
