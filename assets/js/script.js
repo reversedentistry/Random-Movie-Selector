@@ -12,7 +12,7 @@ function getRandomMovie(){
     })
     .then(function (data){
       getRandomNumber();
-      randomMovieDiv.innerHTML = "Movie Name: " + data.items[randomNumber].title + "<br /> Ranking: " + data.items[randomNumber].rank
+      randomMovieDiv.innerHTML = "Movie Name: " + data.items[randomNumber].title + "<br /> Ranking: " + data.items[randomNumber].rank + "<br /> IMDB Rating: " + data.items[randomNumber].imDbRating
       poster.setAttribute("src", data.items[randomNumber].image)
     });
 
@@ -21,8 +21,6 @@ function getRandomMovie(){
     randomNumber = Math.floor(Math.random() * 249);
     }
 };
-  
 
-console.log(randomNumber)
 
 randomBtn.addEventListener("click", getRandomMovie);
