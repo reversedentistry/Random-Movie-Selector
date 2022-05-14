@@ -2,12 +2,6 @@ var imdburl = "https://imdb-api.com/en/API/Top250Movies/k_ms032o15";
 var randomNumber = 0;
 var randomMovieDiv = document.querySelector("#random-movie");
 var randomBtn = document.querySelector("#random-btn");
-var randomBtnPokemon = document.querySelector("#random-btn-pokemon");
-var poster = document.querySelector("#random-movie-poster")
-var pokemonNameGuess = document.querySelector("#pokemonNameGuess");
-var pokemonNameAnswer = ""
-var pokemonAnswerSubmit = document.querySelector("#pokemonSubmit");
-
 
 
 // two functions to fetch from the movie and pokemon apis respectively
@@ -23,11 +17,22 @@ function getRandomMovie(){
     });
 };
 
+
+// POKEMON FUNCTIONS
+// -------------------------------------------------------------------------------------------------
+var randomNumberPokemon = 0;
+var randomBtnPokemon = document.querySelector("#random-btn-pokemon");
+var poster = document.querySelector("#random-movie-poster")
+var pokemonNameAnswer = ""
+var pokemonAnswerSubmit = document.querySelector("#pokemonSubmit");
+
 function getRandomPokemon(){
-  getRandomNumber();
-  var randomString = randomNumber.toString();
+  getRandomNumberPokemon();
+  var randomString = randomNumberPokemon.toString();
   var pokeurl = "https://pokeapi.co/api/v2/pokemon/" + randomString;
   var pokemonSprite = document.querySelector("#pokemon-sprite")
+  var pokemonSpriteTwo = document.querySelector("#pokemon-sprite-two")
+  var pokemonSpriteThree = document.querySelector("#pokemon-sprite-three")
   fetch(pokeurl)
     .then(function(response){
       return response.json();
@@ -35,6 +40,8 @@ function getRandomPokemon(){
     .then(function(data){
       console.log(data);
       pokemonSprite.setAttribute("src", data.sprites.front_default)
+      pokemonSpriteTwo.setAttribute("src", data.sprites.back_default);
+      pokemonSpriteThree.setAttribute("src", data.sprites.other.dream_world.front_default)
       pokemonNameAnswer = data.species.name
       console.log(pokemonNameAnswer)
     })
@@ -42,27 +49,35 @@ function getRandomPokemon(){
 
 // function to see if they guessed the pokemon correctly
 function guessCheck(event){
-  event.preventDefault()
-  var realGuess = pokemonNameGuess.value()
-  console.log(realGuess)
-
-  // if (realGuess == data.species.name) {
-  //   alert("nice!")
-  // } else {
-  //   alert("no.")
-  // }
+  event.preventDefault();
+  var pokemonNameGuess = document.querySelector("#pokemonNameGuess").value.toLowerCase();
+  console.log(pokemonNameGuess);
+  if (pokemonNameGuess == pokemonNameAnswer) {
+    alert("nice!");
+  } else {
+    alert("no.");
+  }
 }
 
-// funtion to grab a random number
+pokemonAnswerSubmit.addEventListener("click", guessCheck)
+// END OF POKEMON 
+// -----------------------------------------------------------------------------------------------------
+
+
+// funtions to grab a random numbers
 function getRandomNumber() {
   randomNumber = Math.floor(Math.random() * 249);
-  }
+}
+
+function getRandomNumberPokemon() {
+  randomNumberPokemon = Math.floor(Math.random() * 500);
+}
 
 // Event listeners for the two buttons to get random movie or random pokemon
 randomBtn.addEventListener("click", getRandomMovie);
 randomBtnPokemon.addEventListener("click", getRandomPokemon)
 
-pokemonAnswerSubmit.addEventListener("click", guessCheck)
+
 
 
 
