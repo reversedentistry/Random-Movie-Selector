@@ -2,6 +2,7 @@ var imdburl = "https://imdb-api.com/en/API/Top250Movies/k_ms032o15";
 var randomNumber = 0;
 var randomMovieDiv = document.querySelector("#random-movie");
 var randomBtn = document.querySelector("#random-btn");
+var poster = document.querySelector("#random-movie-poster")
 
 
 function getRandomMovie(){
@@ -11,7 +12,8 @@ function getRandomMovie(){
     })
     .then(function (data){
       getRandomNumber();
-      randomMovieDiv.innerHTML = data.items[randomNumber].title
+      randomMovieDiv.innerHTML = "Movie Name: " + data.items[randomNumber].title + "<br /> Ranking: " + data.items[randomNumber].rank
+      poster.setAttribute("src", data.items[randomNumber].image)
     });
 
 
