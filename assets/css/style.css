@@ -28,6 +28,14 @@ body{
     margin-top: 20px;
 }
 
+#pokemon-sprite{
+    padding-top: 2em;
+}
+
+#form {
+    padding-top: 1em;
+    padding-bottom: 4em;
+}
 /* #random-btn {
     width: 40%;
     height: 2.4rem;

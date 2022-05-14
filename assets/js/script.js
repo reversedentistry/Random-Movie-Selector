@@ -4,7 +4,9 @@ var randomMovieDiv = document.querySelector("#random-movie");
 var randomBtn = document.querySelector("#random-btn");
 var randomBtnPokemon = document.querySelector("#random-btn-pokemon");
 var poster = document.querySelector("#random-movie-poster")
-var pokemonName = document.querySelector("#pokemonName");
+var pokemonNameGuess = document.querySelector("#pokemonNameGuess");
+var pokemonNameAnswer = ""
+var pokemonAnswerSubmit = document.querySelector("#pokemonSubmit");
 
 
 
@@ -33,12 +35,22 @@ function getRandomPokemon(){
     .then(function(data){
       console.log(data);
       pokemonSprite.setAttribute("src", data.sprites.front_default)
+      pokemonNameAnswer = data.species.name
+      console.log(pokemonNameAnswer)
     })
   }
 
 // function to see if they guessed the pokemon correctly
-function guessCheck(){
-  console.log()
+function guessCheck(event){
+  event.preventDefault()
+  var realGuess = pokemonNameGuess.value()
+  console.log(realGuess)
+
+  // if (realGuess == data.species.name) {
+  //   alert("nice!")
+  // } else {
+  //   alert("no.")
+  // }
 }
 
 // funtion to grab a random number
@@ -50,19 +62,35 @@ function getRandomNumber() {
 randomBtn.addEventListener("click", getRandomMovie);
 randomBtnPokemon.addEventListener("click", getRandomPokemon)
 
-let searchBtn = document.querySelector("#search-btn"); 
-
-searchBtn.addEventListener("click", search)
+pokemonAnswerSubmit.addEventListener("click", guessCheck)
 
 
-function search() {
-    let movieSearch = document.querySelector("#title-search").value;    
-    fetch('http://www.omdbapi.com/?apikey=3649a4e3&t=' + movieSearch)
-        .then(function (response) {
-          return response.json();
-        })
-        .then(function (data) {
-            console.log(data); 
-        })
-        .catch(err => console.error(err));
-}
+
+
+
+
+
+
+
+
+
+
+
+
+// sheryl
+// let searchBtn = document.querySelector("#search-btn"); 
+
+// searchBtn.addEventListener("click", search)
+
+
+// function search() {
+//     let movieSearch = document.querySelector("#title-search").value;    
+//     fetch('http://www.omdbapi.com/?apikey=3649a4e3&t=' + movieSearch)
+//         .then(function (response) {
+//           return response.json();
+//         })
+//         .then(function (data) {
+//             console.log(data); 
+//         })
+//         .catch(err => console.error(err));
+// }
