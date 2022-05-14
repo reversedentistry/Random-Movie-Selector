@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="./assets/style.css"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./assets/style.css" />
 </head>
+
 <body>
     <header id="quote" class="text-center">
         <p>"what it do baby?"" -abraham lincoln</p>
@@ -16,11 +18,15 @@
         <!-- <div id="quote" class="">
             <p>example quote here -abraham lincoln</p>
         </div> -->
-        <div id="generator" class="vh-30 vw-70 bg-secondary d-flex flex-column justify-content-between align-items-center"> <!-- vh and vw wont change? -->
+        <div id="generator"
+            class="vh-30 vw-70 bg-secondary d-flex flex-column justify-content-between align-items-center">
+            <!-- vh and vw wont change? -->
             <h1>Random Movie Generator</h1>
             <button id="random-btn" class="btn btn-primary">Click to get a random movie!</button>
         </div>
-        
+        <label for="title-search">Search a Movie</label>
+        <input type="text" id="title-search" name="title-search">
+        <button type="button" id="search-btn">Search</button>
         <div id="random-movie" class="">movie result here</div>
 
         <div>
@@ -35,4 +41,5 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
 </body>
+
 </html>
