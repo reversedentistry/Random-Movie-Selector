@@ -63,18 +63,22 @@ function guessCheck(event){
   console.log(pokemonNameGuess);
   console.log(score)
   var scoreDisplay = document.querySelector(".scoreDisplay");
+  var yesPikachu = document.querySelector(".yesPikachu");
+  var noPikachu = document.querySelector(".noPikachu");
   
   
   if (pokemonNameGuess == pokemonNameAnswer) {
     score++
     localStorage.setItem("Score", score)
     scoreDisplay.innerHTML = "SCORE: " + score
-    alert("nice!");
+    yesPikachu.classList.remove("hidden")
+    yesPikachu.setAttribute("src", "./assets/Images/PikachuYes1.gif")
   } else {
     score--
     localStorage.setItem("Score", score)
     scoreDisplay.innerHTML = "SCORE: " + score
-    alert("no.");
+    noPikachu.classList.remove("hidden")
+    noPikachu.setAttribute("src", "./assets/Images/PikachuNo2.gif")
   }
 }
 
