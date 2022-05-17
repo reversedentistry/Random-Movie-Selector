@@ -25,13 +25,24 @@ var randomBtnPokemon = document.querySelector("#random-btn-pokemon");
 var poster = document.querySelector("#random-movie-poster")
 var pokemonNameAnswer = ""
 var pokemonAnswerSubmit = document.querySelector("#pokemonSubmit");
+var score = localStorage.getItem("Score");
 
+
+// function to grab random pokemon from api on clicking start button.
+// also hides the start container and unhides the actual quiz
 function getRandomPokemon(){
   getRandomNumberPokemon();
   var randomString = randomNumberPokemon.toString();
   var pokeurl = "https://pokeapi.co/api/v2/pokemon/" + randomString;
   var pokemonSprite = document.querySelector("#pokemon-sprite")
   var pokemonSpriteTwo = document.querySelector("#pokemon-sprite-two")
+  var quizStart = document.querySelector(".quizStart")
+  var quiz = document.querySelector(".quiz")
+  quizStart.classList.add("hidden")
+  quiz.classList.remove("hidden")
+  var scoreDisplay = document.querySelector(".scoreDisplay");
+  scoreDisplay.innerHTML = "SCORE: " + score
+
   fetch(pokeurl)
     .then(function(response){
       return response.json();
@@ -50,12 +61,24 @@ function guessCheck(event){
   event.preventDefault();
   var pokemonNameGuess = document.querySelector("#pokemonNameGuess").value.toLowerCase();
   console.log(pokemonNameGuess);
+  console.log(score)
+  var scoreDisplay = document.querySelector(".scoreDisplay");
+  
+  
   if (pokemonNameGuess == pokemonNameAnswer) {
+    score++
+    localStorage.setItem("Score", score)
+    scoreDisplay.innerHTML = "SCORE: " + score
     alert("nice!");
   } else {
+    score--
+    localStorage.setItem("Score", score)
+    scoreDisplay.innerHTML = "SCORE: " + score
     alert("no.");
   }
 }
+
+
 
 pokemonAnswerSubmit.addEventListener("click", guessCheck)
 // END OF POKEMON 
@@ -74,7 +97,7 @@ function getRandomNumberPokemon() {
 // Event listeners for the two buttons to get random movie or random pokemon
 
 randomBtnPokemon.addEventListener("click", getRandomPokemon)
-randomBtn.addEventListener("click", getRandomMovie);
+// randomBtn.addEventListener("click", getRandomMovie);
 
 
 

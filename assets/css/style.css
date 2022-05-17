@@ -31,10 +31,6 @@ body{
 #pokemon-sprite, #pokemon-sprite-two{
     padding-top: 2em;
 }
-#pokemon-sprite-three{
-    padding-top: 4em;
-}
-
 
 #form {
     padding-top: 1em;
@@ -44,3 +40,7 @@ body{
     width: 40%;
     height: 2.4rem;
 } */
+
+.hidden{
+    display: none;
+}
