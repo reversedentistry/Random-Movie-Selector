@@ -101,7 +101,7 @@ function getRandomNumberPokemon() {
 // Event listeners for the two buttons to get random movie or random pokemon
 
 randomBtnPokemon.addEventListener("click", getRandomPokemon)
-// randomBtn.addEventListener("click", getRandomMovie);
+randomBtn.addEventListener("click", getRandomMovie);
 
 
 

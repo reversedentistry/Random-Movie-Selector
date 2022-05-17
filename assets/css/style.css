@@ -28,6 +28,11 @@ body{
     margin-top: 20px;
 }
 
+#random-movie-poster {
+    max-width: 300px;
+    max-height: 400px;
+}
+
 #pokemon-sprite, #pokemon-sprite-two{
     padding-top: 2em;
 }
