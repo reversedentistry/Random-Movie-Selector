@@ -10,34 +10,26 @@
 </head>
 <body>
     <header id="quote" class="text-center">
-        <p>example quote here -abraham lincoln</p>
+        <p>QUIZ TIME</p>
     </header>
     <main id="container" class="vh-100 d-flex flex-column justify-content-center align-items-center">
-        <!-- <div id="quote" class="">
-            <p>example quote here -abraham lincoln</p>
-        </div> -->
-        <div class="vh-30 vw-70 bg-secondary d-flex flex-column justify-content-between align-items-center generator"> <!-- vh and vw wont change? -->
-            <h1>Random Movie Generator</h1>
-            <button id="random-btn" class="btn btn-primary">Click to get a random movie!</button>
-        </div>
         
-        <div id="random-movie" class="">movie result here</div>
-        <img src="" alt="movie poster" id="random-movie-poster">
-        <br><br><br><br><br><br><br><br><br>
         <div class="vh-30 vw-70 bg-secondary d-flex flex-column justify-content-between align-items-center generator"> <!-- vh and vw wont change? -->
           <h1>Random Pokemon Generator</h1>
           <button id="random-btn-pokemon" class="btn btn-primary">Click to get a random pokemon!</button>
         </div>
-        <div class="d-flex flex-row justify-content-between">
-          <img src="" alt="Pokemon Sprite" id="pokemon-sprite" width="300" height="300">
-         <img src="" alt="Pokemon Sprite" id="pokemon-sprite-two" width="300" height="300">
+        <div class="hidden quiz">
+            <div class="d-flex flex-row justify-content-between">
+            <img src="" alt="Pokemon Sprite" id="pokemon-sprite" width="300" height="300">
+            <img src="" alt="Pokemon Sprite" id="pokemon-sprite-two" width="300" height="300">
+            </div>
+            
+            <form id="form">
+            <label for="pokemonName">Who's that Pokemon???</label>
+            <input type="text" id="pokemonNameGuess">
+            <input type="submit" id="pokemonSubmit">
+            </form>
         </div>
-        
-        <form id="form">
-          <label for="pokemonName">Who's that Pokemon???</label>
-          <input type="text" id="pokemonNameGuess">
-          <input type="submit" id="pokemonSubmit">
-        </form>
     </main>
     <!-- jquery here just in case? -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>

@@ -28,10 +28,13 @@ body{
     margin-top: 20px;
 }
 
-#pokemon-sprite, #pokemon-sprite-two,
-#pokemon-sprite-three{
+#pokemon-sprite, #pokemon-sprite-two{
     padding-top: 2em;
 }
+#pokemon-sprite-three{
+    padding-top: 4em;
+}
+
 
 #form {
     padding-top: 1em;

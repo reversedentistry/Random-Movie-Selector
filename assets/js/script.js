@@ -32,7 +32,6 @@ function getRandomPokemon(){
   var pokeurl = "https://pokeapi.co/api/v2/pokemon/" + randomString;
   var pokemonSprite = document.querySelector("#pokemon-sprite")
   var pokemonSpriteTwo = document.querySelector("#pokemon-sprite-two")
-  var pokemonSpriteThree = document.querySelector("#pokemon-sprite-three")
   fetch(pokeurl)
     .then(function(response){
       return response.json();
@@ -41,7 +40,6 @@ function getRandomPokemon(){
       console.log(data);
       pokemonSprite.setAttribute("src", data.sprites.front_default)
       pokemonSpriteTwo.setAttribute("src", data.sprites.back_default);
-      pokemonSpriteThree.setAttribute("src", data.sprites.other.dream_world.front_default)
       pokemonNameAnswer = data.species.name
       console.log(pokemonNameAnswer)
     })
@@ -74,8 +72,9 @@ function getRandomNumberPokemon() {
 }
 
 // Event listeners for the two buttons to get random movie or random pokemon
-randomBtn.addEventListener("click", getRandomMovie);
+
 randomBtnPokemon.addEventListener("click", getRandomPokemon)
+randomBtn.addEventListener("click", getRandomMovie);
 
 
 
