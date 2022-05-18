@@ -6,6 +6,8 @@ var randomNumber = 0;
 var randomMovieDiv = document.querySelector("#random-movie");
 var randomBtn = document.querySelector("#random-btn");
 var poster = document.querySelector("#random-movie-poster")
+
+
 getRandomNumber();
 
 
@@ -35,6 +37,7 @@ randomBtn.addEventListener("click", getRandomMovie);
 
 let searchBtn = document.querySelector("#search-btn"); 
 let moviePosterEl = document.querySelector("#movie-poster");
+let movDetailsEl = document.querySelector("#movie-details"); 
 
 searchBtn.addEventListener("click", search);
 
@@ -53,9 +56,38 @@ function search() {
 }
 
 function displayMovie(movieData) {
+  let movieTitle = document.createElement("h3");
+  movieTitle.textContent = movieData.Title; 
+  console.log(movieTitle); 
+  movDetailsEl.append(movieTitle); 
+  
   let moviePoster = document.createElement("img"); 
-  moviePoster.src = movieData.poster;
+  moviePoster.src = movieData.Poster;
+  console.log(movieData.Poster); 
   moviePosterEl.append(moviePoster); 
   
-  let movieTitle = document.createElement("h3");
+  let movieDirector = document.createElement("p"); 
+  movieDirector.textContent = "Directed by: " + movieData.Director; 
+  movDetailsEl.append(movieDirector); 
+  
+  let movieRelease = document.createElement("p"); 
+  movieRelease.textContent = "Released: " + movieData.Released; 
+  movDetailsEl.append(movieRelease); 
+
+  let moviePlot = document.createElement("p"); 
+  moviePlot.textContent = "Plot: " + '"' + movieData.Plot + '"'; 
+  movDetailsEl.append(moviePlot); 
+
+  let movieCast = document.createElement("p"); 
+  movieCast.textContent = "Cast: " + movieData.Actors; 
+  movDetailsEl.append(movieCast); 
+
+  let movieRating = document.createElement("p"); 
+  movieRating.textContent = "Rated: " + movieData.Rated; 
+  movDetailsEl.append(movieRating); 
+
+  let movieGross = document.createElement("p"); 
+  movieGross.textContent = "Box Office: " + movieData.BoxOffice; 
+  movDetailsEl.append(movieRating); 
+  
 }
