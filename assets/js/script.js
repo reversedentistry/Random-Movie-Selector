@@ -1,3 +1,6 @@
+
+
+// -----
 var imdburl = "https://imdb-api.com/en/API/Top250Movies/k_ms032o15";
 var randomNumber = 0;
 var randomMovieDiv = document.querySelector("#random-movie");
@@ -44,11 +47,12 @@ function getRandomNumber() {
 
 // Event listeners for the two buttons to get random movie or random pokemon
 randomBtn.addEventListener("click", getRandomMovie);
-randomBtnPokemon.addEventListener("click", getRandomPokemon)
+// randomBtnPokemon.addEventListener("click", getRandomPokemon)
 
 let searchBtn = document.querySelector("#search-btn"); 
+let moviePosterEl = document.querySelector("#movie-poster");
 
-searchBtn.addEventListener("click", search)
+searchBtn.addEventListener("click", search);
 
 
 function search() {
@@ -59,6 +63,15 @@ function search() {
         })
         .then(function (data) {
             console.log(data); 
+            displayMovie(data);
         })
         .catch(err => console.error(err));
+}
+
+function displayMovie(movieData) {
+  let moviePoster = document.createElement("img"); 
+  moviePoster.src = movieData.poster;
+  moviePosterEl.append(moviePoster); 
+  
+  let movieTitle = document.createElement("h3");
 }
