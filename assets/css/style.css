@@ -28,6 +28,16 @@ body{
     margin-top: 20px;
 }
 
+#random-movie-poster{
+    min-height: 20em;
+    min-width: 16em;
+}
+
+.imdbSave{
+    margin-top: 1em;
+    padding: .2em;
+}
+
 /* #random-btn {
     width: 40%;
     height: 2.4rem;

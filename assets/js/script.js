@@ -10,7 +10,7 @@ getRandomNumber();
 
 
 
-// two functions to fetch from the movie and pokemon apis respectively
+// two function to fetch imdb api
 function getRandomMovie(){
   fetch(imdburl)
     .then(function (response){
@@ -29,9 +29,8 @@ function getRandomNumber() {
   randomNumber = Math.floor(Math.random() * 249);
   }
 
-// Event listeners for the two buttons to get random movie or random pokemon
+// Event listeners for the two buttons to get random movie
 randomBtn.addEventListener("click", getRandomMovie);
-// randomBtnPokemon.addEventListener("click", getRandomPokemon)
 
 let searchBtn = document.querySelector("#search-btn"); 
 let moviePosterEl = document.querySelector("#movie-poster");
