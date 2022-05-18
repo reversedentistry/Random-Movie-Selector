@@ -24,6 +24,7 @@ function getRandomMovie(){
     })
     .then(function (data){
       getRandomNumber();
+      console.log(data)
       movieTitle = data.items[randomNumber].title
       randomMovieDiv.innerHTML = "Movie Name: " + data.items[randomNumber].title + "<br /> Ranking: " + data.items[randomNumber].rank + "<br /> IMDB Rating: " + data.items[randomNumber].imDbRating
       poster.setAttribute("src", data.items[randomNumber].image)
@@ -39,10 +40,27 @@ function saveRandomMovie(){
   }
   movieTitleList.push(movieTitle);
   localStorage.setItem("movielist", JSON.stringify(movieTitleList));
-  saveList.innerHTML = "Movies Save to Watch Later: " + "<br /><b>Title:</b> " + movieTitle;
+  renderSavedMovies();
 }
 
 
+
+function renderSavedMovies(){
+  var renderList = JSON.parse(localStorage.getItem("movielist"))
+  if (renderList == null){
+    renderList = []
+  }
+  var text = ""
+  var iterator = 1
+  for (let x of renderList){
+    text += "<b>Title " + iterator + ": </b>" + x + "<br>";
+    iterator++
+    console.log(x);
+  }
+  saveList.innerHTML = text;
+
+}
+renderSavedMovies();
 
 // Event listeners for the two buttons to get random movie
 randomBtn.addEventListener("click", getRandomMovie);
