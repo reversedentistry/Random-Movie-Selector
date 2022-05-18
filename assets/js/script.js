@@ -5,12 +5,18 @@ var imdburl = "https://imdb-api.com/en/API/Top250Movies/k_ms032o15";
 var randomNumber = 0;
 var randomMovieDiv = document.querySelector("#random-movie");
 var randomBtn = document.querySelector("#random-btn");
-var poster = document.querySelector("#random-movie-poster")
+var poster = document.querySelector("#random-movie-poster");
+var saveImdb = document.querySelector(".imdbSave");
+var saveList = document.querySelector("#saveList");
+var movieTitle = ""
 getRandomNumber();
 
+// funtion to grab a random number
+function getRandomNumber() {
+  randomNumber = Math.floor(Math.random() * 249);
+  }
 
-
-// two function to fetch imdb api
+//function to fetch imdb api
 function getRandomMovie(){
   fetch(imdburl)
     .then(function (response){
@@ -18,19 +24,25 @@ function getRandomMovie(){
     })
     .then(function (data){
       getRandomNumber();
+      movieTitle = data.items[randomNumber].title
       randomMovieDiv.innerHTML = "Movie Name: " + data.items[randomNumber].title + "<br /> Ranking: " + data.items[randomNumber].rank + "<br /> IMDB Rating: " + data.items[randomNumber].imDbRating
       poster.setAttribute("src", data.items[randomNumber].image)
     });
 };
 
+// function to save whatever movie is being displayed
+function saveRandomMovie(){
+  console.log(movieTitle)
+  saveList.textContent = "Movies Save to Watch Later: " + movieTitle;
+}
 
-// funtion to grab a random number
-function getRandomNumber() {
-  randomNumber = Math.floor(Math.random() * 249);
-  }
+
 
 // Event listeners for the two buttons to get random movie
 randomBtn.addEventListener("click", getRandomMovie);
+
+// Add event listener for saving movie
+saveImdb.addEventListener("click", saveRandomMovie)
 
 let searchBtn = document.querySelector("#search-btn"); 
 let moviePosterEl = document.querySelector("#movie-poster");
