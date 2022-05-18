@@ -33,7 +33,13 @@ function getRandomMovie(){
 // function to save whatever movie is being displayed
 function saveRandomMovie(){
   console.log(movieTitle)
-  saveList.textContent = "Movies Save to Watch Later: " + movieTitle;
+  var movieTitleList = JSON.parse(localStorage.getItem("movielist"));
+  if (movieTitleList == null){
+    movieTitleList = []
+  }
+  movieTitleList.push(movieTitle);
+  localStorage.setItem("movielist", JSON.stringify(movieTitleList));
+  saveList.innerHTML = "Movies Save to Watch Later: " + "<br /><b>Title:</b> " + movieTitle;
 }
 
 
