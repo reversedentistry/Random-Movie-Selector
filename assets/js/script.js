@@ -60,10 +60,7 @@ function getRandomPokemon(){
 function guessCheck(event){
   event.preventDefault();
   var pokemonNameGuess = document.querySelector("#pokemonNameGuess").value.toLowerCase();
-  console.log(pokemonNameGuess);
-  console.log(score)
   var scoreDisplay = document.querySelector(".scoreDisplay");
-  var yesPikachu = document.querySelector(".yesPikachu");
   var noPikachu = document.querySelector(".noPikachu");
   
   
@@ -71,16 +68,32 @@ function guessCheck(event){
     score++
     localStorage.setItem("Score", score)
     scoreDisplay.innerHTML = "SCORE: " + score
-    yesPikachu.classList.remove("hidden")
-    yesPikachu.setAttribute("src", "./assets/Images/PikachuYes1.gif")
+   
+    getRandomNumberPokemon();
+    pokemonNameGuess.textContent = ""
+    showYes();
   } else {
     score--
     localStorage.setItem("Score", score)
     scoreDisplay.innerHTML = "SCORE: " + score
     noPikachu.classList.remove("hidden")
-    noPikachu.setAttribute("src", "./assets/Images/PikachuNo2.gif")
+    // noPikachu.setAttribute("src", "./assets/Images/PikachuNo2.gif")
   }
 }
+
+function showYes(){
+  var yesPikachu = document.querySelector(".yesPikachu");
+  yesPikachu.classList.remove("hidden")
+  // yesPikachu.setAttribute("src", "./assets/Images/PikachuYes1.gif")
+  var timeLeft = 2;
+  var timeinterval = setInterval(function(){
+    timeLeft--;
+    if (timeLeft === 0){
+      yesPikachu.classList.add("hidden");
+      clearInterval(timeinterval)
+    }
+  }, 1000)
+};
 
 
 
