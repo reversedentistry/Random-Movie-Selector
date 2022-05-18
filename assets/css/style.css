@@ -33,7 +33,7 @@ body{
     min-width: 16em;
 }
 
-.imdbSave{
+.imdbSave, .imdbClearSave{
     margin-top: 1em;
     padding: .2em;
 }

@@ -8,6 +8,7 @@ var randomBtn = document.querySelector("#random-btn");
 var poster = document.querySelector("#random-movie-poster");
 var saveImdb = document.querySelector(".imdbSave");
 var saveList = document.querySelector("#saveList");
+var clearSaveImdb = document.querySelector(".imdbClearSave")
 var movieTitle = ""
 getRandomNumber();
 
@@ -34,39 +35,53 @@ function getRandomMovie(){
 // function to save whatever movie is being displayed
 function saveRandomMovie(){
   console.log(movieTitle)
-  var movieTitleList = JSON.parse(localStorage.getItem("movielist"));
-  if (movieTitleList == null){
-    movieTitleList = []
+  var movieTitleList = localStorage.getItem("movielist")
+  if (movieTitleList.length > 0){
+    var movieTitleListFull = JSON.parse(localStorage.getItem("movielist"));
+    movieTitleListFull.push(movieTitle);
+    localStorage.setItem("movielist", JSON.stringify(movieTitleListFull));
+    renderSavedMovies();
   }
-  movieTitleList.push(movieTitle);
-  localStorage.setItem("movielist", JSON.stringify(movieTitleList));
-  renderSavedMovies();
+  
 }
 
 
-
+// function to load local storage array of saved movies and also update the html page to display stored movies
 function renderSavedMovies(){
-  var renderList = JSON.parse(localStorage.getItem("movielist"))
-  if (renderList == null){
-    renderList = []
-  }
-  var text = ""
-  var iterator = 1
-  for (let x of renderList){
-    text += "<b>Title " + iterator + ": </b>" + x + "<br>";
-    iterator++
-    console.log(x);
+localStorage.setItem("movielist", [])
+  var renderList = localStorage.getItem("movielist")
+  console.log(renderList)
+  if (renderList.length > 0){
+    var fullRenderList = JSON.parse(localStorage.getItem("movielist"))
+    var text = ""
+    var iterator = 1
+    for (let x of fullRenderList){
+      text += "<b>Title " + iterator + ": </b>" + x + "<br>";
+      iterator++
+    }
+  
+  } else {
+    text = ""
   }
   saveList.innerHTML = text;
 
 }
+
 renderSavedMovies();
+
+function clearSavedMovies(){
+  localStorage.setItem("movielist", "")
+  renderSavedMovies();
+}
 
 // Event listeners for the two buttons to get random movie
 randomBtn.addEventListener("click", getRandomMovie);
 
 // Add event listener for saving movie
 saveImdb.addEventListener("click", saveRandomMovie)
+
+// event listener to clear saved movies
+clearSaveImdb.addEventListener("click", clearSavedMovies)
 
 let searchBtn = document.querySelector("#search-btn"); 
 let moviePosterEl = document.querySelector("#movie-poster");
