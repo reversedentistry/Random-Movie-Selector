@@ -57,15 +57,16 @@ function saveRandomMovie(){
 function renderSavedMovies(){
   var renderList = localStorage.getItem("movielist")
   console.log(renderList)
-  if (renderList.length > 0){
+  if (renderList == null){
+    localStorage.setItem("movielist", [])
+  } else if (renderList.length > 0) {
     var fullRenderList = JSON.parse(localStorage.getItem("movielist"))
     var text = ""
     var iterator = 1
     for (let x of fullRenderList){
       text += "<b>Title " + iterator + ": </b>" + x + "<br>";
       iterator++
-    }
-  
+    } 
   } else {
     text = ""
   }
