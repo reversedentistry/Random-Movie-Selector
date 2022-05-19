@@ -1,7 +1,9 @@
 
 
 // -----
-var imdburl = "https://imdb-api.com/en/API/Top250Movies/k_ms032o15";
+var imdburl = "https://imdb-api.com/en/API/Top250Movies/k_3hg8o4xp";
+// https://imdb-api.com/en/API/Top250Movies/k_3hg8o4xp shadowww
+// https://imdb-api.com/en/API/Top250Movies/k_ms032o15
 var randomNumber = 0;
 var randomMovieDiv = document.querySelector("#random-movie");
 var randomBtn = document.querySelector("#random-btn");
@@ -41,6 +43,11 @@ function saveRandomMovie(){
     movieTitleListFull.push(movieTitle);
     localStorage.setItem("movielist", JSON.stringify(movieTitleListFull));
     renderSavedMovies();
+  } else {
+    var newMovieList = []
+    newMovieList.push(movieTitle);
+    localStorage.setItem("movielist", JSON.stringify(newMovieList));
+    renderSavedMovies()
   }
   
 }
@@ -48,7 +55,6 @@ function saveRandomMovie(){
 
 // function to load local storage array of saved movies and also update the html page to display stored movies
 function renderSavedMovies(){
-localStorage.setItem("movielist", [])
   var renderList = localStorage.getItem("movielist")
   console.log(renderList)
   if (renderList.length > 0){
