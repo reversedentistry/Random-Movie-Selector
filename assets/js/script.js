@@ -59,10 +59,9 @@ function displayMovie(movieData) {
   let movieTitle = document.querySelector("#title");
   movieTitle.textContent = movieData.Title;
 
-  let moviePoster = document.createElement("img");
+  let moviePoster = document.querySelector("#poster");
   moviePoster.src = movieData.Poster;
-  moviePosterEl.append(moviePoster);
-
+  
   let movieDirector = document.querySelector("#director");
   movieDirector.innerHTML = "<strong>Directed by:</strong> " + movieData.Director;
 
