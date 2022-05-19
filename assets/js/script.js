@@ -12,9 +12,6 @@ var saveImdb = document.querySelector(".imdbSave");
 var saveList = document.querySelector("#saveList");
 var clearSaveImdb = document.querySelector(".imdbClearSave")
 var movieTitle = ""
-var poster = document.querySelector("#random-movie-poster")
-
-
 getRandomNumber();
 
 // funtion to grab a random number
@@ -24,9 +21,6 @@ function getRandomNumber() {
 
 //function to fetch imdb api
 function getRandomMovie(){
-
-// two functions to fetch from the movie and pokemon apis respectively
-function getRandomMovie() {
   fetch(imdburl)
     .then(function (response) {
       return response.json();
@@ -56,10 +50,6 @@ function saveRandomMovie(){
     renderSavedMovies()
   }
   
-
-// funtion to grab a random number
-function getRandomNumber() {
-  randomNumber = Math.floor(Math.random() * 249);
 }
 
 
@@ -144,4 +134,4 @@ function displayMovie(movieData) {
   let movieGross = document.querySelector("#box-office");
   movieGross.innerHTML = "<strong>Box Office:</strong> " + movieData.BoxOffice;
 
-}}}
+}; 
