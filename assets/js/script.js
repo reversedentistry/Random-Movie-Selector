@@ -56,36 +56,29 @@ function search() {
 }
 
 function displayMovie(movieData) {
-  let movieTitle = document.createElement("h3");
+  let movieTitle = document.querySelector("#title");
   movieTitle.textContent = movieData.Title;
-  movDetailsEl.append(movieTitle);
 
   let moviePoster = document.createElement("img");
   moviePoster.src = movieData.Poster;
   moviePosterEl.append(moviePoster);
 
-  let movieDirector = document.createElement("p");
-  movieDirector.textContent = "Directed by: " + movieData.Director;
-  movDetailsEl.append(movieDirector);
+  let movieDirector = document.querySelector("#director");
+  movieDirector.innerHTML = "<strong>Directed by:</strong> " + movieData.Director;
 
-  let movieRelease = document.createElement("p");
-  movieRelease.textContent = "Released: " + movieData.Released;
-  movDetailsEl.append(movieRelease);
+  let movieRelease = document.querySelector("#release-date");
+  movieRelease.innerHTML = "<strong>Released:</strong> " + movieData.Released;
 
-  let moviePlot = document.createElement("p");
-  moviePlot.textContent = "Plot: " + '"' + movieData.Plot + '"';
-  movDetailsEl.append(moviePlot);
+  let moviePlot = document.querySelector("#plot");
+  moviePlot.innerHTML = "<strong>Plot:</strong> " + '"' + movieData.Plot + '"';
 
-  let movieCast = document.createElement("p");
-  movieCast.textContent = "Cast: " + movieData.Actors;
-  movDetailsEl.append(movieCast);
+  let movieCast = document.querySelector("#cast");
+  movieCast.innerHTML = "<strong>Cast:</strong> " + movieData.Actors;
 
-  let movieRating = document.createElement("p");
-  movieRating.textContent = "Rated: " + movieData.Rated;
-  movDetailsEl.append(movieRating);
+  let movieRating = document.querySelector("#rating");
+  movieRating.innerHTML = "<strong>Rated:</strong> " + movieData.Rated;
 
-  let movieGross = document.createElement("p");
-  movieGross.textContent = "Box Office: " + movieData.BoxOffice;
-  movDetailsEl.append(movieRating);
+  let movieGross = document.querySelector("#box-office");
+  movieGross.innerHTML = "<strong>Box Office:</strong> " + movieData.BoxOffice;
 
-}
+}; 
