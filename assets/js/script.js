@@ -12,6 +12,9 @@ var saveImdb = document.querySelector(".imdbSave");
 var saveList = document.querySelector("#saveList");
 var clearSaveImdb = document.querySelector(".imdbClearSave")
 var movieTitle = ""
+var poster = document.querySelector("#random-movie-poster")
+
+
 getRandomNumber();
 
 // funtion to grab a random number
@@ -21,11 +24,14 @@ function getRandomNumber() {
 
 //function to fetch imdb api
 function getRandomMovie(){
+
+// two functions to fetch from the movie and pokemon apis respectively
+function getRandomMovie() {
   fetch(imdburl)
-    .then(function (response){
+    .then(function (response) {
       return response.json();
     })
-    .then(function (data){
+    .then(function (data) {
       getRandomNumber();
       console.log(data)
       movieTitle = data.items[randomNumber].title
@@ -50,6 +56,10 @@ function saveRandomMovie(){
     renderSavedMovies()
   }
   
+
+// funtion to grab a random number
+function getRandomNumber() {
+  randomNumber = Math.floor(Math.random() * 249);
 }
 
 
@@ -89,29 +99,49 @@ saveImdb.addEventListener("click", saveRandomMovie)
 // event listener to clear saved movies
 clearSaveImdb.addEventListener("click", clearSavedMovies)
 
-let searchBtn = document.querySelector("#search-btn"); 
+let searchBtn = document.querySelector("#search-btn");
 let moviePosterEl = document.querySelector("#movie-poster");
+let movDetailsEl = document.querySelector("#movie-details");
 
 searchBtn.addEventListener("click", search);
 
 
 function search() {
-    let movieSearch = document.querySelector("#title-search").value;    
-    fetch('http://www.omdbapi.com/?apikey=3649a4e3&t=' + movieSearch)
-        .then(function (response) {
-          return response.json();
-        })
-        .then(function (data) {
-            console.log(data); 
-            displayMovie(data);
-        })
-        .catch(err => console.error(err));
+  let movieSearch = document.querySelector("#title-search").value;
+  fetch('http://www.omdbapi.com/?apikey=3649a4e3&t=' + movieSearch)
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
+      console.log(data);
+      displayMovie(data);
+    })
+    .catch(err => console.error(err));
 }
 
 function displayMovie(movieData) {
-  let moviePoster = document.createElement("img"); 
-  moviePoster.src = movieData.poster;
-  moviePosterEl.append(moviePoster); 
+  let movieTitle = document.querySelector("#title");
+  movieTitle.textContent = movieData.Title;
+
+  let moviePoster = document.querySelector("#poster");
+  moviePoster.src = movieData.Poster;
   
-  let movieTitle = document.createElement("h3");
-}
+  let movieDirector = document.querySelector("#director");
+  movieDirector.innerHTML = "<strong>Directed by:</strong> " + movieData.Director;
+
+  let movieRelease = document.querySelector("#release-date");
+  movieRelease.innerHTML = "<strong>Released:</strong> " + movieData.Released;
+
+  let moviePlot = document.querySelector("#plot");
+  moviePlot.innerHTML = "<strong>Plot:</strong> " + '"' + movieData.Plot + '"';
+
+  let movieCast = document.querySelector("#cast");
+  movieCast.innerHTML = "<strong>Cast:</strong> " + movieData.Actors;
+
+  let movieRating = document.querySelector("#rating");
+  movieRating.innerHTML = "<strong>Rated:</strong> " + movieData.Rated;
+
+  let movieGross = document.querySelector("#box-office");
+  movieGross.innerHTML = "<strong>Box Office:</strong> " + movieData.BoxOffice;
+
+}}}
