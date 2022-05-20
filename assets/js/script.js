@@ -165,6 +165,8 @@ function search() {
 
 
 function displayMovie(movieData) {
+  movDetailsEl.innerHTML = ""; 
+
   let movieTitle = document.createElement("h3");
   movieTitle.textContent = movieData.Title;
   movDetailsEl.append(movieTitle);
