@@ -136,3 +136,7 @@ body{
 .stack-top{
     z-index: 1;
 }
+
+.appear {
+    display: block; 
+}
