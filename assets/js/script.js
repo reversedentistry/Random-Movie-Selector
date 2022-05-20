@@ -132,7 +132,7 @@ searchBtn.addEventListener("click", search);
 
 function search() {
   let movieSearch = document.querySelector("#title-search").value;
-  fetch('http://www.omdbapi.com/?apikey=3649a4e3&t=' + movieSearch)
+  fetch('https://www.omdbapi.com/?apikey=3649a4e3&t=' + movieSearch)
     .then(function (response) {
       return response.json();
     })
