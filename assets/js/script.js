@@ -105,11 +105,15 @@ function search() {
     })
     .then(function (data) {
       console.log(data);
-      // if (data.response == false) {
-        //return.... what? 
-      //}
+      if (data.Response === "False") {
+        console.log(data.Response);
+        let modalEl = document.querySelector("#bad-search");
+        modalEl.classList.remove("aria-hidden");
+        modalEl.classList.add("show");
+        modalEl.style.display = "block";  
+      } else {
       displayMovie(data);
-    })
+    }})
     .catch(err => console.error(err));
 }
 
