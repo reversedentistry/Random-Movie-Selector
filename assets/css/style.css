@@ -151,3 +151,21 @@ body{
     /* height: 50%; */
     width: 50vw;
 }
+
+
+
+@media screen and (max-width: 1024px) {
+    .home-card {
+        width: 100rem;
+        align-self: flex-end;
+    }
+       
+   }
+
+   /* @media screen and (max-width: 1024px) {
+    #randomize {
+        justify-content: center;
+        flex-direction: column;
+    }
+       
+   } */

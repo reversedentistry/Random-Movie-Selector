@@ -245,3 +245,4 @@ function displayMovie(movieData) {
 //   movieGross.innerHTML = "<strong>Box Office:</strong> " + movieData.BoxOffice;
 
 // }; 
+
