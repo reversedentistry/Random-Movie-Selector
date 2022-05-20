@@ -36,3 +36,7 @@ Near the bottom of page, there is a search function that uses OMDB's API. This i
 a little more information on the randomized movie from the previous functions. Simply type the title of a movie into the search bar and all the extra 
 information you need. If the movie title does not exist within the API, a modal will pop up to let you know.
  
+ - #### Header
+
+On the top bar of the webpage, there is a header with a few useful buttons. The buttons "Main" and "Bonus" will scroll you directly to the IMDB and OMDB
+programs respectively. 
