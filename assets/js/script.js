@@ -76,6 +76,11 @@ function saveRandomMovie(){
     movieTitleListFull.push(movieTitle);
     localStorage.setItem("movielist", JSON.stringify(movieTitleListFull));
     renderSavedMovies();
+  } else {
+    var newMovieList = []
+    newMovieList.push(movieTitle);
+    localStorage.setItem("movielist", JSON.stringify(newMovieList));
+    renderSavedMovies()
   }
   
 }
@@ -83,18 +88,18 @@ function saveRandomMovie(){
 
 // function to load local storage array of saved movies and also update the html page to display stored movies
 function renderSavedMovies(){
-localStorage.setItem("movielist", [])
   var renderList = localStorage.getItem("movielist")
   console.log(renderList)
-  if (renderList.length > 0){
+  if (renderList == null){
+    localStorage.setItem("movielist", [])
+  } else if (renderList.length > 0) {
     var fullRenderList = JSON.parse(localStorage.getItem("movielist"))
     var text = ""
     var iterator = 1
     for (let x of fullRenderList){
       text += "<b>Title " + iterator + ": </b>" + x + "<br>";
       iterator++
-    }
-  
+    } 
   } else {
     text = ""
   }
