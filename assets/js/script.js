@@ -105,6 +105,9 @@ function search() {
     })
     .then(function (data) {
       console.log(data);
+      // if (data.response == false) {
+        //return.... what? 
+      //}
       displayMovie(data);
     })
     .catch(err => console.error(err));
