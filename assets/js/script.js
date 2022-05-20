@@ -17,10 +17,10 @@ getRandomNumber();
 // funtion to grab a random number
 function getRandomNumber() {
   randomNumber = Math.floor(Math.random() * 249);
-  }
+}
 
 //function to fetch imdb api
-function getRandomMovie(){
+function getRandomMovie() {
   fetch(imdburl)
     .then(function (response) {
       return response.json();
@@ -35,10 +35,10 @@ function getRandomMovie(){
 };
 
 // function to save whatever movie is being displayed
-function saveRandomMovie(){
+function saveRandomMovie() {
   console.log(movieTitle)
   var movieTitleList = localStorage.getItem("movielist")
-  if (movieTitleList.length > 0){
+  if (movieTitleList.length > 0) {
     var movieTitleListFull = JSON.parse(localStorage.getItem("movielist"));
     movieTitleListFull.push(movieTitle);
     localStorage.setItem("movielist", JSON.stringify(movieTitleListFull));
@@ -49,24 +49,24 @@ function saveRandomMovie(){
     localStorage.setItem("movielist", JSON.stringify(newMovieList));
     renderSavedMovies()
   }
-  
+
 }
 
 
 // function to load local storage array of saved movies and also update the html page to display stored movies
-function renderSavedMovies(){
+function renderSavedMovies() {
   var renderList = localStorage.getItem("movielist")
   console.log(renderList)
-  if (renderList == null){
+  if (renderList == null) {
     localStorage.setItem("movielist", [])
   } else if (renderList.length > 0) {
     var fullRenderList = JSON.parse(localStorage.getItem("movielist"))
     var text = ""
     var iterator = 1
-    for (let x of fullRenderList){
+    for (let x of fullRenderList) {
       text += "<b>Title " + iterator + ": </b>" + x + "<br>";
       iterator++
-    } 
+    }
   } else {
     text = ""
   }
@@ -76,7 +76,7 @@ function renderSavedMovies(){
 
 renderSavedMovies();
 
-function clearSavedMovies(){
+function clearSavedMovies() {
   localStorage.setItem("movielist", "")
   renderSavedMovies();
 }
@@ -105,10 +105,31 @@ function search() {
     })
     .then(function (data) {
       console.log(data);
-      displayMovie(data);
+      if (data.Response === "False") {
+        console.log(data.Response);
+        let modalEl = document.querySelector("#bad-search");
+        modalEl.classList.remove("aria-hidden");
+        modalEl.classList.add("show");
+        modalEl.style.display = "block";
+
+        document.querySelectorAll('[data-dismiss]').forEach(item => {
+          item.addEventListener("click", close);
+
+        });
+        function close() {
+          modalEl.style.display = "none";
+          modalEl.classList.remove("show");
+          modalEl.classList.add("aria-hidden");
+        }
+
+      } else {
+        displayMovie(data);
+      }
     })
     .catch(err => console.error(err));
 }
+
+
 
 function displayMovie(movieData) {
   let movieTitle = document.querySelector("#title");
@@ -116,7 +137,7 @@ function displayMovie(movieData) {
 
   let moviePoster = document.querySelector("#poster");
   moviePoster.src = movieData.Poster;
-  
+
   let movieDirector = document.querySelector("#director");
   movieDirector.innerHTML = "<strong>Directed by:</strong> " + movieData.Director;
 

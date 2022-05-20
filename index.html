@@ -1,96 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="./assets/css/style.css"/>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="./assets/css/style.css" />
 </head>
+
 <body>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="#">Engine Features</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Engine Features</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Randomize</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">About Movie</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <div class="pg1">
+    <div id="main" class="homePg">
+      <img
+        src="https://img.freepik.com/free-vector/illustration-movie-watching-home-entertainment-concept-cartoon-illustration_74855-14558.jpg?w=2000">
+    </div>
+    <div class="jumbotron">
+      <h1 class="display-4">Hello, world!</h1>
+      <p class="lead">Need help deciding between thousands of movies?</p>
+      <hr class="my-4">
+      <p>This engine will recommend a movie by randomly picking from a list containing 250 of the most popular movies.
+      </p>
+      <a class="btn btn-primary btn-lg" href="#" role="button">Start</a>
+    </div>
+  </div>
+
+
+  <div class="panel d-flex flex-row">
+    <div class="card-body flex-column d-flex justify-content-center align-items-center">
+      <button id="random-btn" class="btn btn-primary">Get Movie</button>
+    </div>
+    <section class="flex-column view d-flex justify-content-center align-items-center">
+      <div class="d-flex justify-content-center align-items-center results1">
+        <img src="" alt="" id="random-movie-poster">
+      </div>
+      <div class="d-flex flex-column justify-content-center align-items-center">
+        <div class="body" id="random-movie"></div>
+        <button class="imdbSave">Save for Later</button>
+        <button class="imdbClearSave">Clear Saved List</button>
+      </div>
+    </section>
+  </div>
+
+  <div class="border border-primary">
+    <div>
+      Movies Save to Watch Later:
+    </div>
+    <div id="saveList">
+
+    </div>
+
+  </div>
+
+  <br>
+
+  <div>
+    <h2>Want to look up a movie instead?</h2>
+    <label for="title-search">Search a Movie</label>
+    <input type="text" id="title-search" name="title-search">
+    <button type="button" id="search-btn">Search</button>
+  </div>
+  <section class="d-flex flex-row">
+    <div id="movie-poster">
+      <img id="poster">
+    </div>
+    <div id="movie-details">
+      <h3 id="title"></h3>
+      <p id="director"></p>
+      <p id="release-date"></p>
+      <p id="plot"></p>
+      <p id="cast"></p>
+      <p id="rating"></p>
+      <p id="box-office"></p>
+    </div>
+    </div>
+    <div class="modal fade" id="bad-search" tabindex="-1" role="dialog" aria-labelledby="bad-searchLabel"
+      aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="bad-search">Movie cannot be found</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-              <ul class="navbar-nav">
-                <li class="nav-item active">
-                  <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Randomize</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">About Movie</a>
-                </li>
-              </ul>
-            </div>
-          </nav>
-        <div class="pg1">
-        <div id="main" class="homePg">
-            <img src="https://img.freepik.com/free-vector/illustration-movie-watching-home-entertainment-concept-cartoon-illustration_74855-14558.jpg?w=2000">
-        </div>
-        <div class="jumbotron">
-            <h1 class="display-4">Hello, world!</h1>
-            <p class="lead">Need help deciding between thousands of movies?</p>
-            <hr class="my-4">
-            <p>This engine will recommend a movie by randomly picking from a list containing 250 of the most popular movies.</p>
-            <a class="btn btn-primary btn-lg" href="#" role="button">Start</a>
-        </div>
-        </div>
-
-      
-        <div class="panel d-flex flex-row">
-            <div class="card-body flex-column d-flex justify-content-center align-items-center">
-                <button id="random-btn" class="btn btn-primary">Get Movie</button>
-            </div>
-            <section class="flex-column view d-flex justify-content-center align-items-center">
-                <div class="d-flex justify-content-center align-items-center results1">
-                    <img src="" alt="" id="random-movie-poster">
-                </div>
-                <div class="d-flex flex-column justify-content-center align-items-center">
-                    <div class="body" id="random-movie"></div>
-                    <button class="imdbSave">Save for Later</button>
-                    <button class="imdbClearSave">Clear Saved List</button>
-                </div>
-            </section>
-        </div>
-
-        <div class="border border-primary">
-          <div>
-            Movies Save to Watch Later:    
           </div>
-          <div id="saveList">
-
+          <div class="modal-body">
+            <p>Please try again.</p>
           </div>
-                 
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
         </div>
-
-        <br>
-
-        <div>
-            <h2>Want to look up a movie instead?</h2>
-            <label for="title-search">Search a Movie</label>
-            <input type="text" id="title-search" name="title-search">
-            <button type="button" id="search-btn">Search</button>
-        </div>
-        <section class="d-flex flex-row">
-        <div id="movie-poster">
-          <img id="poster">
-        </div>
-        <div id="movie-details">
-          <h3 id="title"></h3>
-          <p id="director"></p>
-          <p id="release-date"></p>
-          <p id="plot"></p>
-          <p id="cast"></p>
-          <p id="rating"></p>
-          <p id="box-office"></p>
-        </div>
-        </div>  
+      </div>
+    </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript" src="./assets/js/script.js"></script>
 </body>
+
 </html>
