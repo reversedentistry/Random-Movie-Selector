@@ -53,6 +53,7 @@ main {
 }
 
 .pg1{
+    padding-bottom: 5rem;
     min-width: 100vw;
     min-height: 100vh;
     background-image: url("https://img.freepik.com/free-vector/illustration-movie-watching-home-entertainment-concept-cartoon-illustration_74855-14558.jpg?t=st=1652843111~exp=1652843711~hmac=ba3fe0ba2443ce4c502a86d5b2d5995ed633985d648e8ec5bfe72990ee0782b2&w=1380");
@@ -159,8 +160,18 @@ main {
 
 @media screen and (max-width: 880px) {
     .home-card {
-        width: 100rem;
+        height: 100%;
+        width: 100%;
         align-self: center;
+    }
+       
+   }
+
+@media screen and (max-width: 1024px) {
+    .pg1{
+
+        flex-direction: column !important;
+        flex-wrap: wrap;
     }
        
    }
@@ -185,7 +196,7 @@ main {
 
 @media screen and (max-width: 1024px) {
     .bonus-container {
-        width: 45%;
+        width: 80%;
     }
        
    }
@@ -193,5 +204,18 @@ main {
 @media screen and (max-width: 1024px) {
     .list-container {
         padding: 3rem;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .bonus-card {
+        width: 45%;
+        height: 100%;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .movie-info {
+        padding-left: 3rem;
     }
 }
