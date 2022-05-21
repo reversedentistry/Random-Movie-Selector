@@ -152,108 +152,7 @@ main {
     width: 50vw;
 }
 
-@media screen and (max-width: 480px) {
-    .home-card{
-        margin: 0;
-    }
-    
-    .pg2{
-        background-position: bottom right;
-    }
 
-    .main-card{
-        width: auto;
-    }
-
-    .list-container{
-        width: auto;
-        align-items: center;
-    }
-
-    #randomize {
-        flex-direction: column;
-    }
-
-    .pg3 {
-        background-position: top right;
-    }
-
-    .bonus-card{
-        width: 45%;
-        font-size:small;
-        margin: .5rem;
-    }
-
-    .my-4{
-        margin-top: 1rem !important;
-        margin-bottom: 1rem !important;
-    }
-
-    .movie-info{
-        padding: 0 !important;
-    }
-
-    .bonus-container{
-        padding: 1rem;
-    }
-
-    #movie-details{
-        width: 100%;
-        font-size: small;
-    }
-}
-
-@media screen and (max-width: 880px) {
-    .home-card {
-       margin-top: 5rem;
-    }
-
-    .poster{
-        width: 80%;
-    }
-
-    #randomize {
-        flex-direction: column !important;
-        align-items: center;
-    }
-
-    .list-container {
-        align-self: center;
-        width: auto;
-        padding: 1.5rem !important
-    }
-
-    .movie-info {
-        padding: 0 !important;
-    }
-
-    .pg2 {
-        background-position: bottom right;
-    }
-
-    .pg3 {
-        background-position: center right;
-        background-size: 60%;
-    }
-
-    .movie-info{
-        padding: 0 !important;
-    }
-
-    .bonus-card {
-        margin: 0;
-    }
-
-    .bonus-container{
-        padding: 1rem;
-    }
-
-    #movie-details{
-        width: 100%;
-        font-size: large;
-    }
-       
-   }
 
 @media screen and (max-width: 1024px) {
     .pg1{
@@ -305,5 +204,117 @@ main {
 @media screen and (max-width: 1024px) {
     .movie-info {
         padding-left: 3rem;
+    }
+}
+
+@media screen and (max-width: 880px) {
+    #pg1{
+        justify-content: center !important;
+    }
+    
+    .home-card {
+       margin-top: 5rem;
+    }
+
+    .poster{
+        width: 80%;
+    }
+
+    #randomize {
+        flex-direction: column !important;
+        align-items: center;
+    }
+
+    .list-container {
+        align-self: center;
+        width: auto;
+        padding: 1.5rem !important
+    }
+
+    .movie-info {
+        padding: 0 !important;
+    }
+
+    .pg2 {
+        background-position: bottom right;
+    }
+
+    .pg3 {
+        background-position: center right;
+        background-size: 60%;
+    }
+
+    .movie-info{
+        padding: 0 !important;
+    }
+
+    .bonus-card {
+        margin: 0;
+    }
+
+    .bonus-container{
+        padding: 1rem;
+    }
+
+    #movie-details{
+        width: 100%;
+        font-size: large;
+    }
+       
+   }
+
+@media screen and (max-width: 480px) {
+    #pg1 {
+        justify-content: end !important;
+    }
+    
+    
+    .pg2{
+        background-position: bottom right;
+    }
+
+    .main-card{
+        width: auto;
+    }
+
+    .poster{
+        width: 40%;
+    }
+
+    .list-container{
+        width: auto;
+        align-items: center;
+    }
+
+    #randomize {
+        flex-direction: column;
+    }
+
+    .pg3 {
+        background-position: top right;
+    }
+
+    .bonus-card{
+        width: 45%;
+        font-size:small;
+        margin: .5rem;
+    }
+
+    .my-4{
+        margin-top: 1rem !important;
+        margin-bottom: 1rem !important;
+    }
+
+    .movie-info{
+        padding: 0 !important;
+    }
+
+    .bonus-container{
+        padding: 1rem;
+    }
+
+    #movie-details{
+        width: 100%;
+        font-size: small;
     }
 }
