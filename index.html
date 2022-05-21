@@ -27,7 +27,7 @@
           </nav>
 
         <main class="y mandatory-scroll-snapping">  
-        <div class="pg1 d-flex flex-row justify-content-end">
+        <div class="pg1 d-flex flex-row justify-content-end" id="pg1">
         <div class="jumbotron home-card">
             <h1 class="display-4">Hello, world!</h1>
             <p class="lead">Need help deciding between thousands of movies?</p>
@@ -47,7 +47,7 @@
               </div>
             </div>
             <div class="d-flex flex-column justify-content-center list-container">
-            <div class="">
+            <div class="movie-info">
               <div>Watch Later:</div>
               <div id="saveList"></div>
             </div>
@@ -65,7 +65,7 @@
                 </div>
             </section> -->
         </div>
-        <div class="pg3 d-flex flex-row justify-content-between" id="about">
+        <div class="pg3 d-flex flex-wrap flex-row justify-content-between" id="about">
           <div class="jumbotron bonus-card">
             <h1 class="display-4">About Movies</h1>
             <p class="lead">This bonus feature presents information about most movies</p>
@@ -94,12 +94,31 @@
           <p id="rating"></p>
           <p id="box-office"></p>
         </div> -->
+      </div>
+      <div class="modal fade" id="bad-search" tabindex="-1" role="dialog" aria-labelledby="bad-searchLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="bad-search">Movie cannot be found</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <p>Please try again.</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+          </div>
         </div>
-        <!-- </div>  -->
-        </div> 
-      </main>
-       
-        <!-- <div class="vh-30 vw-70 bg-secondary d-flex flex-column justify-content-between align-items-center generator">
+      </div>
+      <!-- </div>  -->
+    </div>
+  </main>
+
+  <!-- <div class="vh-30 vw-70 bg-secondary d-flex flex-column justify-content-between align-items-center generator">
           <h1>Random Pokemon Generator</h1>
           <button id="random-btn-pokemon" class="btn btn-primary">Click to get a random pokemon!</button>
         </div>
@@ -109,7 +128,8 @@
           <input type="text" id="pokemonName" value="Pikachu">
           <input type="submit" id="pokemonSubmit">
         </form> -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script type="text/javascript" src="./assets/js/script.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script type="text/javascript" src="./assets/js/script.js"></script>
 </body>
+
 </html>

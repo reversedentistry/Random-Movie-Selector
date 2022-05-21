@@ -10,6 +10,11 @@ body{
  
 }
 
+main {
+    display: flex;
+    flex-direction: column;
+}
+
 #generator {
     height: 15vh;
     width: 70vw;
@@ -48,13 +53,12 @@ body{
 }
 
 .pg1{
+    padding-bottom: 5rem;
     min-width: 100vw;
     min-height: 100vh;
     background-image: url("https://img.freepik.com/free-vector/illustration-movie-watching-home-entertainment-concept-cartoon-illustration_74855-14558.jpg?t=st=1652843111~exp=1652843711~hmac=ba3fe0ba2443ce4c502a86d5b2d5995ed633985d648e8ec5bfe72990ee0782b2&w=1380");
     background-repeat:no-repeat;
-    background-size: 75%;
-    /* margin: 0 2rem; */
-    border: solid 2px black;
+    background-size: 80%;
 }
 
 .pg2{
@@ -64,9 +68,7 @@ body{
     height: 100vh;
     background-repeat:no-repeat;
     background-position: top right;
-    background-size: 50%;
-    /* margin: 0 2rem; */
-    border: solid 2px black;
+    background-size: 40%;
 }
 
 .pg3{
@@ -76,8 +78,6 @@ body{
     background-repeat:no-repeat;
     background-size: 80%;
     background-position: bottom left;
-    /* margin: 2rem; */
-    border: solid 2px black;
 }
 
 
@@ -94,7 +94,7 @@ body{
 }
 
 .bonus-card{
-    width: 30rem;
+    width: 35%;
     height: 30rem;
     /* box-shadow: 2px 2px rgba(0, 0, 0, 0.141); */
     background-color:rgba(255, 255, 255, 0);
@@ -150,4 +150,171 @@ body{
 .list-container{
     /* height: 50%; */
     width: 50vw;
+}
+
+
+
+@media screen and (max-width: 1024px) {
+    .pg1{
+
+        flex-direction: column !important;
+        flex-wrap: wrap;
+    }
+       
+   }
+
+@media screen and (max-width: 1024px) {
+    .pg2{
+
+        flex-direction: column !important;
+        justify-content: space-evenly !important;
+        flex-wrap: wrap;
+    }
+       
+   }
+
+@media screen and (max-width: 1024px) {
+    .pg3 {
+        flex-direction: column !important;
+        justify-content:flex-start !important;
+    }
+       
+   }
+
+@media screen and (max-width: 1024px) {
+    .bonus-container {
+        width: 80%;
+    }
+       
+   }
+
+@media screen and (max-width: 1024px) {
+    .list-container {
+        padding: 3rem;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .bonus-card {
+        width: 45%;
+        height: 100%;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .movie-info {
+        padding-left: 3rem;
+    }
+}
+
+@media screen and (max-width: 880px) {
+    #pg1{
+        justify-content: center !important;
+    }
+    
+    .home-card {
+       margin-top: 5rem;
+    }
+
+    .poster{
+        width: 80%;
+    }
+
+    #randomize {
+        flex-direction: column !important;
+        align-items: center;
+    }
+
+    .list-container {
+        align-self: center;
+        width: auto;
+        padding: 1.5rem !important
+    }
+
+    .movie-info {
+        padding: 0 !important;
+    }
+
+    .pg2 {
+        background-position: bottom right;
+    }
+
+    .pg3 {
+        background-position: center right;
+        background-size: 60%;
+    }
+
+    .movie-info{
+        padding: 0 !important;
+    }
+
+    .bonus-card {
+        margin: 0;
+    }
+
+    .bonus-container{
+        padding: 1rem;
+    }
+
+    #movie-details{
+        width: 100%;
+        font-size: large;
+    }
+       
+   }
+
+@media screen and (max-width: 480px) {
+    #pg1 {
+        justify-content: end !important;
+    }
+    
+    
+    .pg2{
+        background-position: bottom right;
+    }
+
+    .main-card{
+        width: auto;
+    }
+
+    .poster{
+        width: 40%;
+    }
+
+    .list-container{
+        width: auto;
+        align-items: center;
+    }
+
+    #randomize {
+        flex-direction: column;
+    }
+
+    .pg3 {
+        background-position: top right;
+    }
+
+    .bonus-card{
+        width: 45%;
+        font-size:small;
+        margin: .5rem;
+    }
+
+    .my-4{
+        margin-top: 1rem !important;
+        margin-bottom: 1rem !important;
+    }
+
+    .movie-info{
+        padding: 0 !important;
+    }
+
+    .bonus-container{
+        padding: 1rem;
+    }
+
+    #movie-details{
+        width: 100%;
+        font-size: small;
+    }
 }
