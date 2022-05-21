@@ -126,9 +126,14 @@ clearSaveImdb.addEventListener("click", clearSavedMovies)
 let searchBtn = document.querySelector("#search-btn");
 let moviePosterEl = document.querySelector("#movie-poster");
 let movDetailsEl = document.querySelector("#movie-details");
+let searchEl = document.querySelector("#title-search"); 
 
 searchBtn.addEventListener("click", search);
-
+searchEl.addEventListener("keydown", function(e) {
+  if (e.key == "Enter") {
+    search();
+  }
+});
 
 function search() {
   let movieSearch = document.querySelector("#title-search").value;
