@@ -1,0 +1,268 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    /* font-size: 62.5%; */
+}
+
+body{
+    font-size: 1.5rem;
+ 
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+}
+
+#generator {
+    height: 15vh;
+    width: 70vw;
+}
+
+#random-btn:hover {
+    box-shadow: 0 0.4rem 1.4rem;
+    transform: scale(1.03);
+}
+
+#random-movie {
+    margin-top: 20px;
+}
+
+/* #random-btn {
+    width: 40%;
+    height: 2.4rem;
+} */
+
+
+.mainContainer{
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+} 
+
+.poster{
+    width: 40%;
+    /* height: 50%; */
+}
+
+.textContainer{
+    margin: 0 !important;
+    width: 25rem;
+}
+
+.pg1{
+    padding-bottom: 5rem;
+    min-width: 100vw;
+    min-height: 100vh;
+    background-image: url("https://img.freepik.com/free-vector/illustration-movie-watching-home-entertainment-concept-cartoon-illustration_74855-14558.jpg?t=st=1652843111~exp=1652843711~hmac=ba3fe0ba2443ce4c502a86d5b2d5995ed633985d648e8ec5bfe72990ee0782b2&w=1380");
+    background-repeat:no-repeat;
+    background-size: 80%;
+    /* margin: 0 2rem; */
+    border: solid 2px black;
+}
+
+.pg2{
+    background-image: url("https://img.freepik.com/free-vector/woman-watching-movie-show-tv_74855-11273.jpg?t=st=1652843111~exp=1652843711~hmac=f14c491d6e1f3c70472fcd372aad7895cbe8c6cac4a91d84f1a6a22f50a8734d&w=1380");
+    /* object-fit: cover; */
+    width: 100vw;
+    height: 100vh;
+    background-repeat:no-repeat;
+    background-position: top right;
+    background-size: 40%;
+    /* margin: 0 2rem; */
+    border: solid 2px black;
+}
+
+.pg3{
+    min-width: 100vw;
+    min-height: 100vh;
+    background-image: url("https://img.freepik.com/free-vector/friends-watching-horror-movie_74855-5250.jpg?w=1800&t=st=1652847052~exp=1652847652~hmac=3212c1f190c03d92bcd3aca844edfdb6dd0bf0417c8f33a10828cd39c62c085a");
+    background-repeat:no-repeat;
+    background-size: 80%;
+    background-position: bottom left;
+    /* margin: 2rem; */
+    border: solid 2px black;
+}
+
+
+.home-card{
+    width: 25rem;
+    height: 25rem;
+    /* position: absolute;
+    top: 2rem;
+    left: 60rem; */
+    background-color:rgba(255, 255, 255, 0);
+    color: rgba(0, 0, 0, 0.667);
+    margin-right: 6rem;
+    padding-right: 3rem;
+}
+
+.bonus-card{
+    width: 35%;
+    height: 30rem;
+    /* box-shadow: 2px 2px rgba(0, 0, 0, 0.141); */
+    background-color:rgba(255, 255, 255, 0);
+    color: rgba(0, 0, 0, 0.667);
+    margin-left: 3rem;
+}
+
+.y.mandatory-scroll-snapping {
+    scroll-snap-type: y mandatory;
+  }
+
+ .mainPoster{
+        /* display: block; */
+        max-width:35rem;
+        max-height:70rem;
+        width: auto;
+        height: auto;
+ } 
+
+ .movie-info{
+    color: rgba(0, 0, 0, 0.667); 
+    font-size:large;
+    padding: 1rem;
+ }
+
+ .main-card{
+    width: 50vw;
+    /* height: 30rem; */
+    /* padding-left:10rem; */
+ }
+
+ .bonus-poster {
+    width:1px !important;
+    height:5px;
+    /* width: auto;
+    height: auto; */
+ }
+
+ .bonus-textbox{
+     width: 15rem !important;
+     /* margin: 0; */
+ }
+
+.bonus-container{
+    width: 45%;
+    height: fit-content;
+    /* box-shadow: 2px 2px black; */
+    padding-top: 4rem;
+    padding-right: 2rem;
+}
+
+
+.list-container{
+    /* height: 50%; */
+    width: 50vw;
+}
+
+@media screen and (max-width: 480px) {
+    .pg2{
+        background-position: bottom right;
+    }
+
+    .main-card{
+        width: auto;
+    }
+
+    .list-container{
+        width: auto;
+        align-items: center;
+    }
+
+    #randomize {
+        flex-direction: column;
+    }
+
+    .pg3 {
+        background-position: top right;
+    }
+
+    .bonus-card{
+        width: 45%;
+        font-size:small;
+        margin: .5rem;
+    }
+
+    .my-4{
+        margin-top: 1rem !important;
+        margin-bottom: 1rem !important;
+    }
+
+    .movie-info{
+        padding: 0 !important;
+    }
+
+    .bonus-container{
+        padding: 1rem;
+    }
+
+    #movie-details{
+        width: 100%;
+        font-size: small;
+    }
+}
+
+@media screen and (max-width: 880px) {
+    .home-card {
+        height: 100%;
+        width: 100%;
+        align-self: center;
+    }
+       
+   }
+
+@media screen and (max-width: 1024px) {
+    .pg1{
+
+        flex-direction: column !important;
+        flex-wrap: wrap;
+    }
+       
+   }
+
+@media screen and (max-width: 1024px) {
+    .pg2{
+
+        flex-direction: column !important;
+        justify-content: space-evenly !important;
+        flex-wrap: wrap;
+    }
+       
+   }
+
+@media screen and (max-width: 1024px) {
+    .pg3 {
+        flex-direction: column !important;
+        justify-content:flex-start !important;
+    }
+       
+   }
+
+@media screen and (max-width: 1024px) {
+    .bonus-container {
+        width: 80%;
+    }
+       
+   }
+
+@media screen and (max-width: 1024px) {
+    .list-container {
+        padding: 3rem;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .bonus-card {
+        width: 45%;
+        height: 100%;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .movie-info {
+        padding-left: 3rem;
+    }
+}
