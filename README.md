@@ -5,11 +5,13 @@ Ever wanted to watch a movie, but weren't sure of what to watch? With this app y
 
 If you aren't feeling so bold, there is a search bar below if you'd like more information on your selections. Just enter the name of the movie, and if the database can find it, it will display details such as rating, major cast members, plot, and more. 
 
-### Collaborators
+### Authors
 >- Franky
 >- David Pascual
 >- Sheryl Hu
+ -- sherylhu@proton.me
 >- Matthew Davis 
+ -- matthewdavis1372@yahoo.com
 
 ### Technologies 
 >- HTML
@@ -40,3 +42,11 @@ information you need. If the movie title does not exist within the API, a modal 
 
 On the top bar of the webpage, there is a header with a few useful buttons. The buttons "Main" and "Bonus" will scroll you directly to the IMDB and OMDB
 programs respectively. 
+
+### Images
+![First screenshot of deployed app](./assets/images/screenshot1.PNG)
+![Second screenshot of deployed app](./assets/images/screenshot2.PNG)
+
+### License
+Copyright (c) 2022 Franky, David Pascual, Sheryl Hu, Matthew Davis.
+This project is MIT licensed. 
