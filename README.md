@@ -8,6 +8,7 @@ If you aren't feeling so bold, there is a search bar below if you'd like more in
 ### Authors
 >- Franky
 >- David Pascual
+ -- davidpascual200@gmail.com
 >- Sheryl Hu
  -- sherylhu@proton.me
 >- Matthew Davis 
