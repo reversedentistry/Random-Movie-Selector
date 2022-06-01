@@ -6,7 +6,7 @@ Ever wanted to watch a movie, but weren't sure of what to watch? With this app y
 If you aren't feeling so bold, there is a search bar below if you'd like more information on your selections. Just enter the name of the movie, and if the database can find it, it will display details such as rating, major cast members, plot, and more. 
 
 ### Authors
->- Franky
+>- Franky Erra --  frankyerra1@gmail.com
 >- David Pascual
  -- davidpascual200@gmail.com
 >- Sheryl Hu
