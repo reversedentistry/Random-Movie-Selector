@@ -49,5 +49,5 @@ programs respectively.
 ![Second screenshot of deployed app](./assets/images/screenshot2.PNG)
 
 ### License
-Copyright (c) 2022 Franky, David Pascual, Sheryl Hu, Matthew Davis.
+Copyright (c) 2022 Franky Erra, David Pascual, Sheryl Hu, Matthew Davis.
 This project is MIT licensed. 
